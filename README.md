@@ -4,7 +4,7 @@ Requires [KM_CM's Addon.](github.com/KM-CM/GarrysMod-KM_CMs_Addon)
 
 The voices were taken from here: https://sounds.spriters-resource.com/pc_computer/farcry3/
 
-The other assets are taken from the following addons by Buu342.
+The other assets are taken from the following addons by Buu342.<br>
 Because of that, this addon conflicts with them.
 
 I took them without permission for one simple reason: this was a private project for fun at first.<br>
