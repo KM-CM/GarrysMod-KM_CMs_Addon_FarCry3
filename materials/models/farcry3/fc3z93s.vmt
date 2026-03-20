@@ -1,0 +1,6 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/FarCry3/FC3Z93S"
+	"$model" 1
+	"$nocull" 1
+}

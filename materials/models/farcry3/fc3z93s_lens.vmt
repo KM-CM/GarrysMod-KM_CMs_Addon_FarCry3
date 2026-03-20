@@ -1,0 +1,17 @@
+unlitgeneric
+{
+	$additive 1
+	$envmap env_cubemap
+	$envmaptint "[0.3 0 0]"
+	"$basetexture" "models/FarCry3/FC3Z93S_LENS"
+	//$ignorez 1
+	$selfilum 1
+	Proxies
+	{
+		IronSightAmount
+		{
+			resultVar	"$alpha"
+			invert		1
+		}
+	}
+}
