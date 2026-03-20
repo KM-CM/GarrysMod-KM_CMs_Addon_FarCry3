@@ -1,0 +1,15 @@
+"VertexLitGeneric" {
+	"$basetexture" "models/FarCry3/FC3D50"
+	"$bumpmap" "models/FarCry3/FC3D50_normal"
+	"$ssbump" "1"
+	"$surfaceprop" "metal"
+	"$model" "1"
+	"$nocull" "1"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[ .02 .015 .013 ]"
+	"$phong" "1"
+	"$phongexponent" "5"
+	"$phongboost" "1"
+	"$phongfresnelranges" "[ .05 .5 1 ]"
+}
