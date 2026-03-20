@@ -10,6 +10,6 @@ Because of that, this addon conflicts with them.
 I took them without permission for one simple reason: this was a private project for fun at first.
 Now that it's so large and features so much I am uploading it here.
 
-Weapon models: https://steamcommunity.com/sharedfiles/filedetails/?id=271699506
-Pirate Assaulter: https://steamcommunity.com/sharedfiles/filedetails/?id=202125513
+Weapon models: https://steamcommunity.com/sharedfiles/filedetails/?id=271699506<br>
+Pirate Assaulter: https://steamcommunity.com/sharedfiles/filedetails/?id=202125513<br>
 Privateer Defender: https://steamcommunity.com/sharedfiles/filedetails/?id=208566384
