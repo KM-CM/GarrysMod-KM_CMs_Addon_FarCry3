@@ -7,7 +7,7 @@ The voices were taken from here: https://sounds.spriters-resource.com/pc_compute
 The other assets are taken from the following addons by Buu342.
 Because of that, this addon conflicts with them.
 
-I took them without permission for one simple reason: this was a private project for fun at first.
+I took them without permission for one simple reason: this was a private project for fun at first.<br>
 Now that it's so large and features so much I am uploading it here.
 
 Weapon models: https://steamcommunity.com/sharedfiles/filedetails/?id=271699506<br>
