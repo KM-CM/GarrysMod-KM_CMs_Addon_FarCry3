@@ -4,6 +4,10 @@ Requires [KM_CM's Addon.](github.com/KM-CM/GarrysMod-KM_CMs_Addon)
 
 The voices were taken from here: https://sounds.spriters-resource.com/pc_computer/farcry3/
 
+I didn't listen through all of them yet, hence why the Privateer Defender has so few lines.<br>
+Do not worry, I am still listening through them. If you see a number comment on an entity file,<br>
+such as the Privateer Defender, it is probably just the line I stopped listening at.
+
 The other assets are taken from the following addons by Buu342.<br>
 Because of that, this addon conflicts with them.
 
