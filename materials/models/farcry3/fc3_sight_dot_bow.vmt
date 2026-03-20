@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/FarCry3/FC3_SIGHT_DOT_BOW"
+	"$additive" 1
+	"$translucent" 1
+
+	$nocull 1
+}
