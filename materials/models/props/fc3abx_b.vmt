@@ -1,6 +1,6 @@
 "VertexLitGeneric"
 {
-	"$basetexture" "models/props/FC3ABX"
+	"$basetexture" "models/props/FC3ABX_B"
 	"$surfaceprop" "metal"
 	"$model" 1
 	"$nocull" 1
