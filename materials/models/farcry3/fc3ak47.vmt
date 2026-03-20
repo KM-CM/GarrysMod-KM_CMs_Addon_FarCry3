@@ -1,0 +1,14 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models/FarCry3/FC3AK47"
+	"$bumpmap"		"models/FarCry3/FC3AK47_normal"
+	"$surfaceprop" "metal"
+	"$model" 1
+	"$nocull" 1
+
+	"$normalmapalphaenvmapmask" "1"
+	"$phong" "1"
+	"$phongexponent" "5"
+	"$phongboost"	"1"
+	"$phongfresnelranges"	"[0.05 0.5 1]"
+}
