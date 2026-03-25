@@ -106,8 +106,8 @@ function ENT:DLG_Pinned() self:EmitSound "HoytPrivateerDefenderPinned" end
 function ENT:Initialize()
 	self:SetModel "models/player/privateer_1.mdl"
 	// Expensive ass vest
-	self:SetHealth( 320 )
-	self:SetMaxHealth( 320 )
+	self:SetHealth( 200 )
+	self:SetMaxHealth( 200 )
 	self:SetPlayerColor( Vector( 1, 1, 0 ) )
 	BaseClass.Initialize( self )
 end

@@ -7,7 +7,7 @@ list.Set( "NPC", "HumanVaasPirateAssaulter", {
 	Name = "#HumanVaasPirateAssaulter",
 	Class = "HumanVaasPirateAssaulter",
 	Category = "Humans",
-	Weapons = { "AK47" }
+	Weapons = { "AKM" }
 } )
 
 // UNUSED

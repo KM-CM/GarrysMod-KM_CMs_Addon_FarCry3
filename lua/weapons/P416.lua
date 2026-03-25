@@ -16,7 +16,7 @@ function SWEP:GetReloadActivity( bOneInTheChamber ) return bOneInTheChamber && A
 SWEP.Primary.ClipSize = 30
 SWEP.Primary.DefaultClip = 30
 SWEP.Primary.Automatic = true
-SWEP.Primary.Ammo = "AR2"
+SWEP.Primary.Ammo = "SMG1"
 SWEP.Primary_flSpreadX = .006
 SWEP.Primary_flSpreadY = .006
 SWEP.Primary_flDamage = 30
@@ -76,4 +76,16 @@ sound.Add {
 SWEP.vViewModelAim = Vector( -8.009, -3.961, .239 )
 SWEP.vViewModelAimAngle = Vector( .216, -1.073, -.357 )
 
-if CLIENT then SWEP.DrawWorldModel = MANUAL_WEAPON_ATTACHMENT_RIFLE end
+function SWEP:DrawWorldModel()
+	local pOwner = self:GetOwner()
+	if !IsValid( pOwner ) then self:SetRenderOrigin( nil ) self:SetRenderAngles( nil ) self:DrawModel() return end
+	local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" )
+	local ang = tHand.Ang
+	local vOffset = ang:Right() * 1 + ang:Forward() * 0 + ang:Up() * 0
+	ang:RotateAroundAxis( ang:Right(), 90 )
+	ang:RotateAroundAxis( ang:Forward(), 180 )
+	ang:RotateAroundAxis( ang:Up(), 0 )
+	self:SetRenderOrigin( tHand.Pos + vOffset )
+	self:SetRenderAngles( ang )
+	self:DrawModel()
+end
