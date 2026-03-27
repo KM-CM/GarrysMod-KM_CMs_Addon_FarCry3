@@ -1,3 +1,5 @@
+// TODO: Use the same infinite ammo type system as grenades use (pOwner.GAME_tItemCounts)
+
 DEFINE_BASECLASS "BaseWeapon"
 
 SWEP.Category = "Bows"
@@ -10,7 +12,7 @@ SWEP.Primary.ClipSize = 1
 SWEP.Primary.DefaultClip = 1
 SWEP.Primary.Automatic = false
 SWEP.m_bAllowOneInTheChamber = false
-SWEP.Primary.Ammo = ""
+SWEP.Primary.Ammo = "XBowBolt" // HACKHACK: Limit ammo to SOME degree until we finally do what is written AT THE BEGINNING OF THE FILE
 SWEP.Primary_flDelay = 2
 SWEP.Secondary.ClipSize = -1
 SWEP.Secondary.DefaultClip = -1
@@ -20,11 +22,12 @@ SWEP.Slot = 3
 SWEP.ViewModelFOV = 54
 SWEP.Crosshair = "Rifle"
 SWEP.bSpecial = true
-SWEP.sHoldType = "SMG"
 SWEP.vViewModelAim = Vector( -2.524, -5.231, 3.21 )
 SWEP.vViewModelAimAngle = Vector( 0, -7.081, -47.355 )
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
 SWEP.flCustomZoomFoV = 40
+
+function SWEP:Initialize() self:SetHoldType "SMG" end
 
 sound.Add {
 	name = "RookIslandsBowShot",
@@ -32,12 +35,40 @@ sound.Add {
 	level = 70,
 	pitch = { 90, 100 },
 	sound = {
-		"FC3/weapons/bow/bow-1.wav",
-		"FC3/weapons/bow/bow-2.wav",
-		"FC3/weapons/bow/bow-3.wav"
+		"RookIslandsBow/1.wav",
+		"RookIslandsBow/2.wav",
+		"RookIslandsBow/3.wav"
 	}
 }
 SWEP.sSound = "RookIslandsBowShot"
+
+sound.Add {
+    name = "Weapon_Cbow.Insert",
+    channel = CHAN_ITEM,
+    level = 80,
+    sound = "RookIslandsBow/Insert.wav"
+}
+
+sound.Add {
+    name = "Weapon_Cbow.Pull",
+    channel = CHAN_ITEM,
+    level = 80,
+    sound = "RookIslandsBow/Pull.wav"
+}
+
+sound.Add {
+    name = "Weapon_Cbow.Rest",
+    channel = CHAN_ITEM,
+    level = 80,
+    sound = "RookIslandsBow/Rest.wav"
+}
+
+sound.Add {
+    name = "Weapon_Cbow.Draw",
+    channel = CHAN_ITEM,
+    level = 80,
+    sound = "RookIslandsBow/Draw.wav"
+}
 
 function SWEP:PullBackStart( f ) self.flPullBackStart = tonumber( f ) end
 function SWEP:PullBackEnd( f ) self.flPullBackEnd = tonumber( f ) end
@@ -73,8 +104,6 @@ function SWEP:Think()
 					pPhys:AddVelocity( dDirection * math_Remap( CurTime(), self.flPullBackStart, f, 0, self.flArrowVelocity ) )
 				else pPhys:AddVelocity( dDirection * self.flArrowVelocity ) end
 			end
-			self.flPullBackStart = nil
-			self.flPullBackEnd = nil
 		end
 	end
 end
@@ -91,7 +120,15 @@ function SWEP:PrimaryAttack()
 	self.flPullBackEnd = f
 end
 
-function SWEP:Reload() end
+function SWEP:Reload()
+	self:CallOnClient "PullBackStart"
+	self:CallOnClient "PullBackEnd"
+	self:SendWeaponAnim( ACT_VM_HAULBACK )
+	self.m_bPullBack = nil
+	local f = self:SequenceDuration()
+	self:CallOnClient( "ReloadTime", f )
+	self:SetNextPrimaryFire( CurTime() + f )
+end
 
 local math_max = math.max
 function SWEP:GatherCrosshairSpread( MyTable, bForceIdentical )

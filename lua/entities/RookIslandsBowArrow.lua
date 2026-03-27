@@ -10,12 +10,13 @@ local CEntity_GetTable = CEntity.GetTable
 
 local CEntity_SetHealth = CEntity.SetHealth
 
-ENT.GAME_bNoCollisionDamage = true
+local FVPHYSICS_NO_IMPACT_DMG = FVPHYSICS_NO_IMPACT_DMG
 
 function ENT:Initialize()
 	self:SetModel "models/weapons/FC3W/FC3Arrow.mdl"
 	self:SetMoveType( MOVETYPE_VPHYSICS )
 	self:PhysicsInit( SOLID_VPHYSICS )
+	self:GetPhysicsObject():AddGameFlag( FVPHYSICS_NO_IMPACT_DMG )
 	CEntity_SetHealth( self, 85 )
 end
 
