@@ -26,8 +26,8 @@ function ENT:Touch( pHitEntity )
 		local dDamage = DamageInfo()
 		dDamage:SetAttacker( self:GetOwner() )
 		dDamage:SetDamage( self:Health() )
-		local tr = self:GetTouchTrace()
-		local v = tr.HitPos
+		dDamage:SetDamageType( DMG_SLASH )
+		local v = self:GetTouchTrace().HitPos
 		dDamage:SetDamagePosition( v )
 		local f = pHitEntity.SetLastHitGroup
 		if f then

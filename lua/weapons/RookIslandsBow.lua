@@ -12,7 +12,7 @@ SWEP.Primary.ClipSize = 1
 SWEP.Primary.DefaultClip = 1
 SWEP.Primary.Automatic = false
 SWEP.m_bAllowOneInTheChamber = false
-SWEP.Primary.Ammo = "XBowBolt" // HACKHACK: Limit ammo to SOME degree until we finally do what is written AT THE BEGINNING OF THE FILE
+SWEP.Primary.Ammo = ""
 SWEP.Primary_flDelay = 2
 SWEP.Secondary.ClipSize = -1
 SWEP.Secondary.DefaultClip = -1
@@ -70,8 +70,8 @@ sound.Add {
     sound = "RookIslandsBow/Draw.wav"
 }
 
-function SWEP:PullBackStart( f ) self.flPullBackStart = tonumber( f ) end
-function SWEP:PullBackEnd( f ) self.flPullBackEnd = tonumber( f ) end
+function SWEP:PullBackStart( f ) self.m_flPullBackStart = tonumber( f ) end
+function SWEP:PullBackEnd( f ) self.m_flPullBackEnd = tonumber( f ) end
 
 SWEP.flArrowVelocity = 4096
 
@@ -99,9 +99,9 @@ function SWEP:Think()
 			pArrow:Spawn()
 			local pPhys = pArrow:GetPhysicsObject()
 			if IsValid( pPhys ) then
-				local f = self.flPullBackEnd
+				local f = self.m_flPullBackEnd
 				if CurTime() <= f then
-					pPhys:AddVelocity( dDirection * math_Remap( CurTime(), self.flPullBackStart, f, 0, self.flArrowVelocity ) )
+					pPhys:AddVelocity( dDirection * math_Remap( CurTime(), self.m_flPullBackStart, f, 0, self.flArrowVelocity ) )
 				else pPhys:AddVelocity( dDirection * self.flArrowVelocity ) end
 			end
 		end
@@ -113,14 +113,15 @@ function SWEP:PrimaryAttack()
 	self.m_bPullBack = true
 	local f = CurTime()
 	self:CallOnClient( "PullBackStart", f )
-	self.flPullBackStart = f
+	self.m_flPullBackStart = f
 	self:SendWeaponAnim( ACT_VM_PULLBACK )
 	f = f + self:SequenceDuration()
 	self:CallOnClient( "PullBackEnd", f )
-	self.flPullBackEnd = f
+	self.m_flPullBackEnd = f
 end
 
 function SWEP:Reload()
+	if !self.m_bPullBack || CurTime() <= self.m_flPullBackEnd then return end
 	self:CallOnClient "PullBackStart"
 	self:CallOnClient "PullBackEnd"
 	self:SendWeaponAnim( ACT_VM_HAULBACK )
@@ -138,10 +139,10 @@ function SWEP:GatherCrosshairSpread( MyTable, bForceIdentical )
 	local v = MyTable.Primary_flSpreadY
 	if v then flSpreadY = v end
 	local flInaccuracy = MyTable.flCrosshairInAccuracy * ( MyTable.vViewModelAim && MyTable.flAimMultiplier || 1 )
-	local f = MyTable.flPullBackEnd
+	local f = MyTable.m_flPullBackEnd
 	if f then
 		if CurTime() <= f then
-			flInaccuracy = math_Remap( CurTime(), MyTable.flPullBackStart, f, flInaccuracy, .015 )
+			flInaccuracy = math_Remap( CurTime(), MyTable.m_flPullBackStart, f, flInaccuracy, .015 )
 		else flInaccuracy = .015 end
 	end
 	if MyTable.bCrosshairSizeIdentical || bForceIdentical then
