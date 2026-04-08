@@ -41,8 +41,7 @@ sound.Add {
 	channel = CHAN_WEAPON,
 	level = 150,
 	pitch = { 90, 110 },
-	sound = "^AK47Shot.wav",
-	volume = .5
+	sound = "^AK47Shot.wav"
 }
 SWEP.sSound = "AKMShot"
 sound.Add {
@@ -50,8 +49,7 @@ sound.Add {
 	channel = CHAN_AUTO,
 	level = 150,
 	pitch = { 90, 110 },
-	sound = "^AK47Shot.wav",
-	volume = .5
+	sound = "^AK47Shot.wav"
 }
 SWEP.sSound = "AKMShotAuto"
 

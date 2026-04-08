@@ -39,7 +39,6 @@ SWEP.m_bAimShootDoesntBlockNormalShoot = true
 sound.Add {
 	name = "ColtM1911Shot",
 	channel = CHAN_WEAPON,
-	volume = .5,
 	level = 150,
 	pitch = { 90, 100 },
 	sound = "ColtM1911/Fire.wav"
@@ -49,7 +48,6 @@ SWEP.sSound = "ColtM1911Shot"
 sound.Add {
 	name = "ColtM1911ShotAuto",
 	channel = CHAN_AUTO,
-	volume = .5,
 	level = 150,
 	pitch = { 90, 100 },
 	sound = "ColtM1911/Fire.wav"

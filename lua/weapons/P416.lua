@@ -40,7 +40,6 @@ sound.Add {
 	channel = CHAN_WEAPON,
 	level = 150,
 	pitch = { 90, 100 },
-	volume = .5,
 	sound = "P416/Fire.wav"
 }
 SWEP.sSound = "P416Fire"
@@ -49,7 +48,6 @@ sound.Add {
 	channel = CHAN_AUTO,
 	level = 150,
 	pitch = { 90, 100 },
-	volume = .5,
 	sound = "P416/Fire.wav"
 }
 SWEP.sSoundAuto = "P416FireAuto"

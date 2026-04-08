@@ -30,7 +30,7 @@ SWEP.Crosshair = "Rifle"
 SWEP.flAimShoot = 4
 SWEP.sAimSound = "BaseWeapon_Aim_Rifle"
 SWEP.flRecoil = 2
-SWEP.sHoldType = "Shotgun"
+SWEP.sHoldType = "AR2"
 
 sound.Add {
 	name = "MKGShot",

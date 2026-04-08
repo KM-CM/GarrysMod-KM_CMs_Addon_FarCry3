@@ -184,6 +184,9 @@ sound.Add {
 
 if !SERVER then return end
 
+// Don't forget they're dumbasses
+ENT.Moving_WEAPON_STANCE = WEAPON_STANCE_HIP
+
 if !CLASS_VAAS_PIRATES then Add_NPC_Class "CLASS_VAAS_PIRATES" end
 ENT.iDefaultClass = CLASS_VAAS_PIRATES
 

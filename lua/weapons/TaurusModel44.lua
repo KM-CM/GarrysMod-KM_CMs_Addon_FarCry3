@@ -37,7 +37,6 @@ SWEP.flAimShoot = 1
 sound.Add {
 	name = "TaurusModel44Shot",
 	channel = CHAN_WEAPON,
-	volume = .5,
 	level = 150,
 	pitch = { 90, 100 },
 	sound = "^TaurusModel44/Fire.wav"
@@ -47,7 +46,6 @@ SWEP.sSound = "TaurusModel44Shot"
 sound.Add {
 	name = "TaurusModel44ShotAuto",
 	channel = CHAN_AUTO,
-	volume = .5,
 	level = 150,
 	pitch = { 90, 100 },
 	sound = "^TaurusModel44/Fire.wav"
