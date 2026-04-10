@@ -25,7 +25,6 @@ SWEP.Primary_flDelay = .07058823529
 SWEP.flRecoil = 1.5
 
 SWEP.Slot = 2
-SWEP.ViewModelFOV = 45
 SWEP.Crosshair = "Rifle"
 SWEP.sHoldType = "AR2"
 SWEP.flAimShoot = 2
@@ -75,6 +74,7 @@ SWEP.vViewModelAim = Vector( -8.009, -3.961, .239 )
 SWEP.vViewModelAimAngle = Vector( .216, -1.073, -.357 )
 
 function SWEP:DrawWorldModel()
+	self:DrewWorldModelAndUsedRenderOverrides()
 	local pOwner = self:GetOwner()
 	if !IsValid( pOwner ) then self:SetRenderOrigin( nil ) self:SetRenderAngles( nil ) self:DrawModel() return end
 	local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" )

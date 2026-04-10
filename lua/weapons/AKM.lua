@@ -10,7 +10,7 @@ SWEP.Primary.ClipSize = 30
 SWEP.Primary.DefaultClip = 30
 SWEP.Primary.Automatic = true
 SWEP.Primary.Ammo = "SMG1"
-SWEP.Primary_flDelay = .08571428571
+SWEP.Primary_flDelay = .09 // .08571428571
 SWEP.Primary_flSpreadX = .0073
 SWEP.Primary_flSpreadY = .0073
 SWEP.Primary_flDamage = 40
@@ -44,18 +44,50 @@ sound.Add {
 	sound = "^AK47Shot.wav"
 }
 SWEP.sSound = "AKMShot"
+//	sound.Add {
+//		name = "AKMShotAuto",
+//		channel = CHAN_AUTO,
+//		level = 150,
+//		pitch = { 90, 110 },
+//		sound = "^AK47Shot.wav"
+//	}
+//	SWEP.sSoundAuto = "AKMShotAuto"
+
 sound.Add {
-	name = "AKMShotAuto",
-	channel = CHAN_AUTO,
-	level = 150,
-	pitch = { 90, 110 },
-	sound = "^AK47Shot.wav"
+	name = "Weapon_Cak47.Magin",
+	channel = CHAN_ITEM,
+	soundlevel = 100,
+	sound = "AKM/MagIn.wav"
 }
-SWEP.sSound = "AKMShotAuto"
+sound.Add {
+	name = "Weapon_Cak47.Magout",
+	channel = CHAN_ITEM,
+	soundlevel = 100,
+	sound = "AKM/MagOut.wav"
+}
+sound.Add {
+	name = "Weapon_Cak47.Bolt",
+	channel = CHAN_ITEM,
+	soundlevel = 100,
+	sound = "AKM/Bolt.wav"
+}
+sound.Add {
+	name = "Weapon_Cak47.Move",
+	channel = CHAN_ITEM,
+	soundlevel = 100,
+	sound = "AKM/Move.wav"
+}
+sound.Add {
+	name = "Weapon_Cak47.Move2",
+	channel = CHAN_ITEM,
+	soundlevel = 100,
+	sound = "AKM/Move2.wav"
+}
 
 list.Add( "NPCUsableWeapons", { class = "AKM", title = "#AKM", category = SWEP.Category } )
 
 function SWEP:DrawWorldModel()
+	self:DrewWorldModelAndUsedRenderOverrides()
 	local pOwner = self:GetOwner()
 	if !IsValid( pOwner ) then self:SetRenderOrigin( nil ) self:SetRenderAngles( nil ) self:DrawModel() return end
 	local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" )

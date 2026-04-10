@@ -24,7 +24,6 @@ SWEP.Crosshair = "SubMachineGun"
 SWEP.sAimSound = "BaseWeapon_Aim_SubMachineGun"
 SWEP.sHoldType = "SMG"
 
-SWEP.ViewModelFOV = 45
 SWEP.flAimShoot = 3
 
 SWEP.ViewModel = "models/weapons/c_v45.mdl"
