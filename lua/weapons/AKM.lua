@@ -33,6 +33,7 @@ SWEP.sHoldType = "AR2"
 SWEP.vViewModelAim = Vector( -6.304, -3.047, 1.236 )
 SWEP.vViewModelAimAngle = Vector( -1.29, -1.453, -.784 )
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
+SWEP.sAnimationSet = "FarCry3AKM"
 
 function SWEP:GetReloadActivity( bOneInTheChamber ) return bOneInTheChamber && ACT_VM_RELOAD || ACT_VM_RELOAD_EMPTY end
 
