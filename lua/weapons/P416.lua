@@ -6,7 +6,7 @@ DEFINE_BASECLASS "BaseBulletWeapon"
 SWEP.Category = "Assault Rifles"
 SWEP.PrintName = "#P416"
 SWEP.Purpose = "Patriot Ordnance Factory P416."
-SWEP.sAnimationSet = "UpRun"
+SWEP.sAnimationSet = "RifleUp"
 
 SWEP.sAimSound = "BaseWeapon_Aim_Rifle"
 
