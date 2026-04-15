@@ -1,3 +1,8 @@
+// In P416.lua, I said,
+// "NOTE: Dunia II most likely uses looping gunfire sounds, I have no idea. This is why this P416 sounds shit.
+// I cannot really do anything about the sound without Buu342, as I don't have Far Cry 3 installed, nor do I know how to rip sounds."
+// and this still affects this. BUT! The AK has a much simpler sound, and this recreation sounds good enough.
+
 DEFINE_BASECLASS "BaseBulletWeapon"
 
 SWEP.Category = "Assault Rifles"
@@ -33,7 +38,6 @@ SWEP.sHoldType = "AR2"
 SWEP.vViewModelAim = Vector( -6.304, -3.047, 1.236 )
 SWEP.vViewModelAimAngle = Vector( -1.29, -1.453, -.784 )
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
-SWEP.sAnimationSet = "FarCry3AKM"
 
 function SWEP:GetReloadActivity( bOneInTheChamber ) return bOneInTheChamber && ACT_VM_RELOAD || ACT_VM_RELOAD_EMPTY end
 

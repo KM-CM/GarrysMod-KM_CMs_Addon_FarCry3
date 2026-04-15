@@ -1,8 +1,12 @@
+// NOTE: Dunia II most likely uses looping gunfire sounds, I have no idea. This is why this P416 sounds shit.
+// I cannot really do anything about the sound without Buu342, as I don't have Far Cry 3 installed, nor do I know how to rip sounds.
+
 DEFINE_BASECLASS "BaseBulletWeapon"
 
 SWEP.Category = "Assault Rifles"
 SWEP.PrintName = "#P416"
 SWEP.Purpose = "Patriot Ordnance Factory P416."
+SWEP.sAnimationSet = "UpRun"
 
 SWEP.sAimSound = "BaseWeapon_Aim_Rifle"
 
@@ -28,9 +32,6 @@ SWEP.Slot = 2
 SWEP.Crosshair = "Rifle"
 SWEP.sHoldType = "AR2"
 SWEP.flAimShoot = 2
-
-SWEP.vSprint = Vector( 1.228, 1.358, -1.94 )
-SWEP.vSprintAngle = Vector( -5, 34.167, -20 )
 
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
 
