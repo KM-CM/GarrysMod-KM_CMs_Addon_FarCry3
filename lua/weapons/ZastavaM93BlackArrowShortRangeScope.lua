@@ -32,7 +32,8 @@ SWEP.sHoldType = "AR2"
 SWEP.vViewModelAim = Vector( -2.84, -5.347, .68 )
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
 SWEP.bSniper = true
-SWEP.sAnimationSet = "Sniper"
+SWEP.WPN_SPRINT = WPN_SNIPER
+SWEP.WPN_SHOOT = WPN_SNIPER
 
 SWEP.flZoomFoVMin = 20
 SWEP.flZoomFoVMax = 6
@@ -93,15 +94,15 @@ sound.Add {
 list.Add( "NPCUsableWeapons", { class = "ZastavaM93BlackArrowShortRangeScope", title = "#ZastavaM93BlackArrowShortRangeScope", category = SWEP.Category } )
 
 function SWEP:DrawWorldModel()
-	self:DrewWorldModelAndUsedRenderOverrides()
-	local pOwner = self:GetOwner()
-	if !IsValid( pOwner ) then self:SetRenderOrigin( nil ) self:SetRenderAngles( nil ) self:DrawModel() return end
-	local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" )
-	local ang = tHand.Ang
-	local vOffset = ang:Right() * .55 + ang:Up() * 1.7
-	ang:RotateAroundAxis( ang:Forward(), 10 )
-	ang:RotateAroundAxis( ang:Up(), 180 )
-	self:SetRenderOrigin( tHand.Pos + vOffset )
-	self:SetRenderAngles( ang )
-	self:DrawModel()
+    self:DrewWorldModelAndUsedRenderOverrides()
+    local pOwner = self:GetOwner()
+    if !IsValid( pOwner ) then self:DrawModel() return end
+    local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" )
+    local ang = tHand.Ang
+    local vOffset = ang:Right() * .55 + ang:Up() * 1.7
+    ang:RotateAroundAxis( ang:Forward(), 10 )
+    ang:RotateAroundAxis( ang:Up(), 180 )
+    self:SetRenderOrigin( tHand.Pos + vOffset )
+    self:SetRenderAngles( ang )
+    self:DrawModel()
 end

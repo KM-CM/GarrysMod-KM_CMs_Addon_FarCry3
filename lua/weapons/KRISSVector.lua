@@ -72,3 +72,16 @@ sound.Add {
 	sound = "^KRISSVector/Fire.wav"
 }
 SWEP.sSoundAuto = "KRISSVectorShotAuto"
+
+function SWEP:DrawWorldModel()
+    self:DrewWorldModelAndUsedRenderOverrides()
+    local pOwner = self:GetOwner()
+    if !IsValid( pOwner ) then self:DrawModel() return end
+    local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" )
+    local ang = tHand.Ang
+    local vOffset = ang:Right() + ang:Forward() * -13 + ang:Up() * 2
+    ang:RotateAroundAxis( ang:Right(), 10 )
+    self:SetRenderOrigin( tHand.Pos + vOffset )
+    self:SetRenderAngles( ang )
+    self:DrawModel()
+end

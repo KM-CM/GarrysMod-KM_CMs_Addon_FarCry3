@@ -23,7 +23,8 @@ SWEP.vViewModelAim = Vector( -6.001, -2.891, .68 )
 SWEP.vViewModelAimAngle = Vector( -.551, 1.919, 0 )
 SWEP.ViewModelFOV = 48
 SWEP.Crosshair = "Revolver"
-SWEP.sAnimationSet = "Pistol"
+SWEP.WPN_SPRINT = WPN_PISTOL
+SWEP.WPN_SHOOT = WPN_PISTOL
 SWEP.flRecoil = 12
 SWEP.flSideWaysRecoilMin = -.2
 SWEP.flSideWaysRecoilMax = .2
@@ -76,3 +77,16 @@ sound.Add {
 	soundlevel = 80,
 	sound = "TaurusModel44/Close.wav"
 }
+
+function SWEP:DrawWorldModel()
+    self:DrewWorldModelAndUsedRenderOverrides()
+    local pOwner = self:GetOwner()
+    if !IsValid( pOwner ) then self:DrawModel() return end
+    local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" )
+    local ang = tHand.Ang
+    local vOffset = ang:Right() * .55 + ang:Forward() * -2 + ang:Up() * -.5
+    ang:RotateAroundAxis( ang:Forward(), 10 )
+    self:SetRenderOrigin( tHand.Pos + vOffset )
+    self:SetRenderAngles( ang )
+    self:DrawModel()
+end

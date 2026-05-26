@@ -25,7 +25,7 @@ function SWEP:Holster( pTo )
 	local pViewModel = pOwner.GetViewModel
 	if pViewModel then
 		pViewModel = pViewModel( pOwner )
-		if IsValid( pViewModel ) then pViewModel:SetColor( color_white ) pViewModel:SetBodygroup( 1, 2 ) end
+		if IsValid( pViewModel ) then pViewModel:SetColor( color_white ) pViewModel:SetBodygroup( 1, 0 ) end
 	end
 	return true
 end

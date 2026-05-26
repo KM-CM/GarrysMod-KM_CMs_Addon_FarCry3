@@ -6,7 +6,8 @@ DEFINE_BASECLASS "BaseBulletWeapon"
 SWEP.Category = "Assault Rifles"
 SWEP.PrintName = "#P416"
 SWEP.Purpose = "Patriot Ordnance Factory P416."
-SWEP.sAnimationSet = "RifleUp"
+SWEP.WPN_SPRINT = WPN_RIFLEUP
+SWEP.WPN_SHOOT = WPN_RIFLEUP
 
 SWEP.sAimSound = "BaseWeapon_Aim_Rifle"
 
@@ -24,7 +25,7 @@ SWEP.Primary.Ammo = "SMG1"
 SWEP.Primary_flSpreadX = .006
 SWEP.Primary_flSpreadY = .006
 SWEP.Primary_flDamage = 30
-SWEP.Primary_flDelay = .07058823529
+SWEP.Primary_flDelay = 60 / 750
 
 SWEP.flRecoil = 1.5
 

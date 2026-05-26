@@ -44,7 +44,7 @@ sound.Add {
 	level = 150,
 	pitch = 100,
 	sound = {
-		"VaasPirate/Assaulter/DaaamnMothafuckah.wav",
+		"VaasPirate/Assaulter/DaaamnMothafucka.wav",
 		"VaasPirate/Assaulter/OhMyGod.wav",
 		"VaasPirate/Assaulter/HolyShit.wav",
 		"VaasPirate/Assaulter/Aah.wav",

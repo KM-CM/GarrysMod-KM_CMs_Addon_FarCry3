@@ -22,7 +22,8 @@ SWEP.Slot = 1
 SWEP.vViewModelAim = Vector( -7.202, -5.2, 2.4 )
 SWEP.vViewModelAimAngle = Vector( -1.364, -.051 )
 SWEP.Crosshair = "Pistol"
-SWEP.sAnimationSet = "Pistol"
+SWEP.WPN_SPRINT = WPN_PISTOL
+SWEP.WPN_SHOOT = WPN_PISTOL
 SWEP.flRecoil = 2
 SWEP.flSideWaysRecoilMin = -.2
 SWEP.flSideWaysRecoilMax = .2
@@ -72,3 +73,16 @@ sound.Add {
 	soundlevel = 80,
 	sound = "ColtM1911/Bolt.wav"
 }
+
+function SWEP:DrawWorldModel()
+	self:DrewWorldModelAndUsedRenderOverrides()
+	local pOwner = self:GetOwner()
+	if !IsValid( pOwner ) then self:DrawModel() return end
+	local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" )
+	local ang = tHand.Ang
+	local vOffset = ang:Right() * .55 + ang:Forward() * -2 + ang:Up() * -.5
+	ang:RotateAroundAxis( ang:Forward(), 10 )
+	self:SetRenderOrigin( tHand.Pos + vOffset )
+	self:SetRenderAngles( ang )
+	self:DrawModel()
+end
