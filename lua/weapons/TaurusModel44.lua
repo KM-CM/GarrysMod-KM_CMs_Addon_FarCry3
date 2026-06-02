@@ -90,3 +90,39 @@ function SWEP:DrawWorldModel()
     self:SetRenderAngles( ang )
     self:DrawModel()
 end
+
+if CLIENT then
+	local math_abs = math.abs
+	local math_sin = math.sin
+	local RealTime = RealTime
+	VIEWMODEL_CAMERA_ANIMATIONS[ "models/weapons/c_44magnum.mdl" ] = {
+		reload = function( pViewModel, vTarget, vTargetAngle )
+			local flCycle = pViewModel:GetCycle()
+			if flCycle < .1 then
+				vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 2
+			elseif flCycle < .2 then
+				vTargetAngle[ 1 ] = vTargetAngle[ 1 ] - 2
+			elseif flCycle < .25 then
+				vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 2
+			elseif flCycle < .3 then
+				vTargetAngle[ 1 ] = vTargetAngle[ 1 ] - 2
+			elseif flCycle < .4 then
+			elseif flCycle > .4 && flCycle < .8 then
+				vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 2
+			end
+			if flCycle > .68 && flCycle < .78 then
+				vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 2
+			end
+			if flCycle > .8 && flCycle < .85 then
+				vTargetAngle[ 1 ] = vTargetAngle[ 1 ] - 1
+				vTargetAngle[ 2 ] = vTargetAngle[ 2 ] + 1
+			elseif flCycle >= .85 && flCycle < .9 then
+				vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 1
+				vTargetAngle[ 2 ] = vTargetAngle[ 2 ] - 1
+			end
+			if flCycle < .66 then
+				vTargetAngle[ 3 ] = vTargetAngle[ 3 ] + math_abs( math_sin( RealTime() * 4 ) ) * 2
+			end
+		end
+	}
+end
