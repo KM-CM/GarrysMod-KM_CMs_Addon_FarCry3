@@ -35,7 +35,6 @@ SWEP.__VIEWMODEL_FULLY_MODELED__ = true
 SWEP.flAimShoot = 6
 SWEP.flCoverX = -6
 SWEP.flSwayStabilizer = .5
-SWEP.m_bAimShootDoesntBlockNormalShoot = true
 
 sound.Add {
 	name = "ColtM1911Shot",

@@ -32,7 +32,9 @@ SWEP.flRecoil = 1.5
 SWEP.Slot = 2
 SWEP.Crosshair = "Rifle"
 SWEP.sHoldType = "AR2"
-SWEP.flAimShoot = 2
+SWEP.flAimShoot = 4
+SWEP.flAimShootTurn = .04
+SWEP.flSwayStabilizer = .6
 
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
 

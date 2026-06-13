@@ -15,7 +15,7 @@ SWEP.Primary.ClipSize = 30
 SWEP.Primary.DefaultClip = 30
 SWEP.Primary.Automatic = true
 SWEP.Primary.Ammo = "SMG1"
-SWEP.Primary_flDelay = .09 // .08571428571
+SWEP.Primary_flDelay = .0899
 SWEP.Primary_flSpreadX = .0073
 SWEP.Primary_flSpreadY = .0073
 SWEP.Primary_flDamage = 40
@@ -35,9 +35,11 @@ SWEP.flRecoilGrowMin = .66
 SWEP.flRecoilGrowMax = 1
 SWEP.sAimSound = "BaseWeapon_Aim_Rifle"
 SWEP.sHoldType = "AR2"
-SWEP.vViewModelAim = Vector( -6.304, -3.047, 1.236 )
+SWEP.vViewModelAim = Vector( -10.304, -2.94, 1.1 )
 SWEP.vViewModelAimAngle = Vector( -1.29, -1.453, -.784 )
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
+SWEP.flSwayStabilizer = .7
+SWEP.flAimSway = .05
 
 function SWEP:GetReloadActivity( bOneInTheChamber ) return bOneInTheChamber && ACT_VM_RELOAD || ACT_VM_RELOAD_EMPTY end
 
@@ -45,7 +47,7 @@ sound.Add {
 	name = "AKMShot",
 	channel = CHAN_WEAPON,
 	level = 150,
-	pitch = { 90, 110 },
+	pitch = { 85, 115 },
 	sound = "^AK47Shot.wav"
 }
 SWEP.sSound = "AKMShot"

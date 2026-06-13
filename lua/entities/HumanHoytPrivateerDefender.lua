@@ -55,6 +55,8 @@ sound.Add {
 	}
 }
 
+// TODO: When I code in the advancing cover fire interaction,
+// this should be used there, not at the current shitty DLG_Advancing lol
 sound.Add {
 	name = "HoytPrivateerDefenderAdvancing",
 	channel = CHAN_VOICE,
