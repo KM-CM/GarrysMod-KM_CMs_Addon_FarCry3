@@ -13,7 +13,7 @@ SWEP.Primary.DefaultClip = 1
 SWEP.Primary.Automatic = false
 SWEP.m_bAllowOneInTheChamber = false
 SWEP.Primary.Ammo = ""
-SWEP.Primary_flDelay = 2
+SWEP.Primary_flDelay = .2
 SWEP.Secondary.ClipSize = -1
 SWEP.Secondary.DefaultClip = -1
 SWEP.Secondary.Ammo = ""
@@ -26,6 +26,7 @@ SWEP.vViewModelAim = Vector( -2.524, -5.231, 3.21 )
 SWEP.vViewModelAimAngle = Vector( 0, -7.081, -47.355 )
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
 SWEP.flCustomZoomFoV = 40
+SWEP.flRecoil = 3
 
 function SWEP:Initialize() self:SetHoldType "SMG" end
 
@@ -90,6 +91,7 @@ function SWEP:Think()
 			local f = self:SequenceDuration()
 			self:CallOnClient( "ReloadTime", f )
 			self:SetNextPrimaryFire( CurTime() + f )
+			self:DoRecoil()
 			if CLIENT then return end
 			local pArrow = ents.Create "RookIslandsBowArrow"
 			pArrow:SetPos( pOwner:GetShootPos() )

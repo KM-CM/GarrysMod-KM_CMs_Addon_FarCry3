@@ -25,16 +25,12 @@ SWEP.Crosshair = "Pistol"
 SWEP.WPN_SPRINT = WPN_PISTOL
 SWEP.WPN_SHOOT = WPN_PISTOL
 SWEP.flRecoil = 2
-SWEP.flSideWaysRecoilMin = -.2
-SWEP.flSideWaysRecoilMax = .2
-SWEP.flRecoilGrowMin = .4
-SWEP.flRecoilGrowMax = .85
 SWEP.sAimSound = "BaseWeapon_Aim_Pistol"
 SWEP.sHoldType = "Pistol"
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
 SWEP.flAimShoot = 6
-SWEP.flCoverX = -6
 SWEP.flSwayStabilizer = .5
+SWEP.ViewModelFOV = 50
 
 sound.Add {
 	name = "ColtM1911Shot",

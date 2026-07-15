@@ -29,7 +29,7 @@ SWEP.flAimShoot = 3
 SWEP.ViewModel = "models/weapons/c_v45.mdl"
 SWEP.WorldModel = "models/weapons/FC3W/FC3v45w.mdl"
 
-SWEP.vViewModelAim = Vector( -8.806, -4.18, 1.44 )
+SWEP.vViewModelAim = Vector( -9, -4.16, 1.42 )
 SWEP.vViewModelAimAngle = Vector( -2.166, -4.24, -3.333 )
 
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
