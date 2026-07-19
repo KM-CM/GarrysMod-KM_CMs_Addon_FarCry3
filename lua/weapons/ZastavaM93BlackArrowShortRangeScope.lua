@@ -65,25 +65,25 @@ SWEP.sSound = "ZastavaM93BlackArrowShot"
 sound.Add {
     name = "Weapon_Cz93.Boltback",
     channel = CHAN_ITEM,
-    soundlevel = 80,
+    level = 80,
     sound = "ZastavaM93BlackArrow/BoltBack.wav"
 }
 sound.Add {
     name = "Weapon_Cz93.Boltforward",
     channel = CHAN_ITEM,
-    soundlevel = 80,
+    level = 80,
     sound = "ZastavaM93BlackArrow/BoltForward.wav"
 }
 sound.Add {
     name = "Weapon_Cz93.Magout",
     channel = CHAN_ITEM,
-    soundlevel = 80,
+    level = 80,
     sound = "ZastavaM93BlackArrow/MagOut.wav"
 }
 sound.Add {
     name = "Weapon_Cz93.Maghit",
     channel = CHAN_ITEM,
-    soundlevel = 80,
+    level = 80,
     sound = "ZastavaM93BlackArrow/MagHit.wav"
 }
 

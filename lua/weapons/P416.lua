@@ -58,19 +58,19 @@ SWEP.sSoundAuto = "P416FireAuto"
 sound.Add {
 	name = "Weapon_Cp416.MagIn",
 	channel = CHAN_ITEM,
-	soundlevel = 80,
+	level = 80,
 	sound = "P416/MagIn.wav"
 }
 sound.Add {
 	name = "Weapon_Cp416.MagOut",
 	channel = CHAN_ITEM,
-	soundlevel = 80,
+	level = 80,
 	sound = "P416/MagOut.wav"
 }
 sound.Add {
 	name = "Weapon_Cp416.Bolt",
 	channel = CHAN_ITEM,
-	soundlevel = 80,
+	level = 80,
 	sound = "P416/Bolt.wav"
 }
 

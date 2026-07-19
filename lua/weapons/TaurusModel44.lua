@@ -52,25 +52,25 @@ SWEP.sSoundAuto = "TaurusModel44ShotAuto"
 sound.Add {
 	name = "Weapon_Cmagnum.Magin",
 	channel = CHAN_ITEM,
-	soundlevel = 80,
+	level = 80,
 	sound = "TaurusModel44/MagIn.wav"
 }
 sound.Add {
 	name = "Weapon_Cmagnum.Magout",
 	channel = CHAN_ITEM,
-	soundlevel = 80,
+	level = 80,
 	sound = "TaurusModel44/MagOut.wav"
 }
 sound.Add {
 	name = "Weapon_Cmagnum.Open",
 	channel = CHAN_ITEM,
-	soundlevel = 80,
+	level = 80,
 	sound = "TaurusModel44/Open.wav"
 }
 sound.Add {
 	name = "Weapon_Cmagnum.Close",
 	channel = CHAN_ITEM,
-	soundlevel = 80,
+	level = 80,
 	sound = "TaurusModel44/Close.wav"
 }
 

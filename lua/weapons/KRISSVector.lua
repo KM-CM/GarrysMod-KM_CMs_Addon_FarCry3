@@ -37,19 +37,19 @@ SWEP.__VIEWMODEL_FULLY_MODELED__ = true
 sound.Add {
 	name = "Weapon_Cv45.MagIn",
 	channel = CHAN_ITEM,
-	soundlevel = 80,
+	level = 80,
 	sound = "KRISSVector/MagIn.wav"
 }
 sound.Add {
 	name = "Weapon_Cv45.MagOut",
 	channel = CHAN_ITEM,
-	soundlevel = 80,
+	level = 80,
 	sound = "KRISSVector/MagOut.wav"
 }
 sound.Add {
 	name = "Weapon_Cv45.Bolt",
 	channel = CHAN_ITEM,
-	soundlevel = 80,
+	level = 80,
 	sound = "KRISSVector/Bolt.wav"
 }
 
@@ -85,3 +85,40 @@ function SWEP:DrawWorldModel()
     self:SetRenderAngles( ang )
     self:DrawModel()
 end
+
+SWEP.m_bNoNormalShootAnimation = true
+
+if SERVER then return end
+
+local math_abs = math.abs
+local math_sin = math.sin
+local RealTime = RealTime
+VIEWMODEL_CAMERA_ANIMATIONS[ "models/weapons/c_v45.mdl" ] = {
+	reload = function( pViewModel, vTarget, vTargetAngle )
+		local flCycle = pViewModel:GetCycle()
+		if flCycle < .25 then
+			vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 2
+		elseif flCycle < .3 then
+			vTargetAngle[ 1 ] = vTargetAngle[ 1 ] - 1
+		elseif flCycle > .6 && flCycle < .7 then
+			vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 2
+		end
+		if flCycle < .8 then
+			vTargetAngle[ 3 ] = vTargetAngle[ 3 ] + math_abs( math_sin( RealTime() * 6 ) ) * 2
+		end
+	end,
+	reload_E = function( pViewModel, vTarget, vTargetAngle )
+		local flCycle = pViewModel:GetCycle()
+		if flCycle < .25 then
+			vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 2
+		elseif flCycle < .5 then
+			vTargetAngle[ 1 ] = vTargetAngle[ 1 ] - 1
+		elseif flCycle > .5 && flCycle < .8 then
+			vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 2
+		end
+		if flCycle > .69 && flCycle < .79 then vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 2 end
+		if flCycle < .85 then
+			vTargetAngle[ 3 ] = vTargetAngle[ 3 ] + math_abs( math_sin( RealTime() * 6 ) ) * 2
+		end
+	end
+}

@@ -59,31 +59,31 @@ SWEP.sSound = "AKMShot"
 sound.Add {
 	name = "Weapon_Cak47.Magin",
 	channel = CHAN_ITEM,
-	soundlevel = 100,
+	level = 100,
 	sound = "AKM/MagIn.wav"
 }
 sound.Add {
 	name = "Weapon_Cak47.Magout",
 	channel = CHAN_ITEM,
-	soundlevel = 100,
+	level = 100,
 	sound = "AKM/MagOut.wav"
 }
 sound.Add {
 	name = "Weapon_Cak47.Bolt",
 	channel = CHAN_ITEM,
-	soundlevel = 100,
+	level = 100,
 	sound = "AKM/Bolt.wav"
 }
 sound.Add {
 	name = "Weapon_Cak47.Move",
 	channel = CHAN_ITEM,
-	soundlevel = 100,
+	level = 100,
 	sound = "AKM/Move.wav"
 }
 sound.Add {
 	name = "Weapon_Cak47.Move2",
 	channel = CHAN_ITEM,
-	soundlevel = 100,
+	level = 100,
 	sound = "AKM/Move2.wav"
 }
 
