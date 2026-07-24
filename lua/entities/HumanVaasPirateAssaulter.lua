@@ -167,18 +167,26 @@ sound.Add {
 	level = 150,
 	pitch = 100,
 	sound = {
+		// Technically from the Shotgunner, but who cares?
+		// Even the wiki says it:
+		// "When charging towards Jason. (Somehow also used by other Pirates with guns, except for Heavy Gunner)"
 		"VaasPirate/Assaulter/Chaarge.wav",
-		"VaasPirate/Assaulter/Chyaaarge.wav",
-		// Technically from the Shotgunner... I think. But who cares?
+		"VaasPirate/Assaulter/Chyarge.wav",
 		"VaasPirate/Assaulter/ChaaargeHaaahahaha.wav",
-		// Ditto
-		"VaasPirate/Assaulter/ChaaargeOoohohohohoho.wav",
-		// This isn't a "CHAAAAAARGEEEEEEEEE"... I'd say still counts lol
+		"VaasPirate/Assaulter/ChaaargeOoohohohohoho.wav"
+	}
+}
+
+// UNUSED
+sound.Add {
+	name = "VaasPirateAssaulterGetHim",
+	channel = CHAN_VOICE,
+	level = 150,
+	pitch = 100,
+	sound = {
 		"VaasPirate/Assaulter/ComeOnLetsGetHim.wav",
-		// Also ditto (ditto ditto? xD)
 		"VaasPirate/Assaulter/ComeOnLetsGetHim2.wav",
-		// Ditto ditto ditto
-		"VaasPirate/Assaulter/GetHimComeOn.wav",
+		"VaasPirate/Assaulter/GetHimComeOn.wav"
 	}
 }
 
