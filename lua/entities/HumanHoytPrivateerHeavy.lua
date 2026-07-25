@@ -20,8 +20,8 @@ ENT.GAME_flHeadshotDamageMultiplier = 2
 ENT.m_sDefaultCombatSchedule = "CombatHeavy"
 
 ENT.flWalkSpeed = 75
-ENT.flRunSpeed = 100
-ENT.flTopSpeed = ENT.flRunSpeed
+ENT.flJogSpeed = 100
+ENT.flTopSpeed = ENT.flJogSpeed
 
 function ENT:Initialize()
 	self:SetModel "models/player/privateer_1.mdl"
