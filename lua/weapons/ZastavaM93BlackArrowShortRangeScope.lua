@@ -93,7 +93,7 @@ function SWEP:DrawWorldModel()
     self:DrewWorldModelAndUsedRenderOverrides()
     local pOwner = self:GetOwner()
     if !IsValid( pOwner ) then self:DrawModel() return end
-    local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" )
+    local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" ) if !tHand then return end
     local ang = tHand.Ang
     local vOffset = ang:Right() * .55 + ang:Up() * 1.7
     ang:RotateAroundAxis( ang:Forward(), 10 )
