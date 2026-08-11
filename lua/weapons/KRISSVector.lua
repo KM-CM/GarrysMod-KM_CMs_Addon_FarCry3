@@ -20,8 +20,8 @@ SWEP.AdminOnly = false
 SWEP.Weight = 1
 SWEP.Slot = 2
 SWEP.DrawAmmo = true
-SWEP.Crosshair = "SubMachineGun"
-SWEP.sAimSound = "BaseWeapon_Aim_SubMachineGun"
+SWEP.Crosshair = "SubmachineGun"
+SWEP.sAimSound = "BaseWeapon_Aim_SubmachineGun"
 SWEP.sHoldType = "SMG"
 
 SWEP.flRecoil = .8
@@ -61,9 +61,9 @@ sound.Add {
 	channel = CHAN_WEAPON,
 	level = 150,
 	pitch = { 90, 110 },
-	sound = "^KRISSVectorShot.wav"
+	sound = "^KRISSVector/Fire.wav"
 }
-SWEP.sSound = "KRISSVector/Fire"
+SWEP.sSound = "KRISSVectorShot"
 
 sound.Add {
 	name = "KRISSVectorShotAuto",
@@ -95,6 +95,20 @@ local math_abs = math.abs
 local math_sin = math.sin
 local RealTime = RealTime
 VIEWMODEL_CAMERA_ANIMATIONS[ "models/weapons/c_v45.mdl" ] = {
+	draw = function( pViewModel, vTarget, vTargetAngle )
+		local flCycle = pViewModel:GetCycle()
+		if flCycle < .25 then
+			vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 2
+		elseif flCycle < .3 then
+			vTargetAngle[ 1 ] = vTargetAngle[ 1 ] - 1
+		elseif flCycle > .6 && flCycle < .7 then
+			vTargetAngle[ 1 ] = vTargetAngle[ 1 ] + 2
+		end
+		if flCycle < .8 then
+			vTargetAngle[ 3 ] = vTargetAngle[ 3 ] + math_sin( RealTime() * 8 )
+		end
+	end,
+
 	reload = function( pViewModel, vTarget, vTargetAngle )
 		local flCycle = pViewModel:GetCycle()
 		if flCycle < .25 then
@@ -108,6 +122,7 @@ VIEWMODEL_CAMERA_ANIMATIONS[ "models/weapons/c_v45.mdl" ] = {
 			vTargetAngle[ 3 ] = vTargetAngle[ 3 ] + math_abs( math_sin( RealTime() * 6 ) ) * 2
 		end
 	end,
+
 	reload_E = function( pViewModel, vTarget, vTargetAngle )
 		local flCycle = pViewModel:GetCycle()
 		if flCycle < .25 then
