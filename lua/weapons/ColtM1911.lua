@@ -28,7 +28,6 @@ SWEP.flRecoil = 2
 SWEP.sAimSound = "BaseWeapon_Aim_Pistol"
 SWEP.sHoldType = "Pistol"
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
-SWEP.flAimShoot = 6
 SWEP.flSwayStabilizer = .5
 SWEP.ViewModelFOV = 50
 

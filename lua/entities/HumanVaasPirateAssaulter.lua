@@ -14,7 +14,7 @@ list.Set( "NPC", "HumanVaasPirateAssaulter", {
 sound.Add {
 	name = "VaasPirateAssaulterSearching",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"VaasPirate/Assaulter/ICantBelieveILostHim_Motherfucker.wav"
@@ -24,7 +24,7 @@ sound.Add {
 sound.Add {
 	name = "VaasPirateAssaulterSpot",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"VaasPirate/Assaulter/IFoundHim.wav",
@@ -41,7 +41,7 @@ sound.Add {
 sound.Add {
 	name = "VaasPirateAssaulterStartle",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"VaasPirate/Assaulter/DaaamnMothafucka.wav",
@@ -63,7 +63,7 @@ sound.Add {
 sound.Add {
 	name = "VaasPirateAssaulterRunFire",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"VaasPirate/Assaulter/RunFire.wav"
@@ -73,7 +73,7 @@ sound.Add {
 sound.Add {
 	name = "VaasPirateAssaulterAdvancing",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"VaasPirate/Assaulter/ImMoving.wav",
@@ -87,7 +87,7 @@ sound.Add {
 sound.Add {
 	name = "VaasPirateAssaulterSuppressed",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"VaasPirate/Assaulter/ShitShit.wav",
@@ -105,7 +105,7 @@ sound.Add {
 sound.Add {
 	name = "VaasPirateAssaulterPinned",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"VaasPirate/Assaulter/ImPinnedDown.wav",
@@ -120,7 +120,7 @@ sound.Add {
 sound.Add {
 	name = "VaasPirateAssaulterAttackingTaunt",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"VaasPirate/Assaulter/ImGonnaEatchuAlive.wav",
@@ -151,7 +151,7 @@ sound.Add {
 sound.Add {
 	name = "VaasPirateAssaulterEfficiencyTaunt",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"VaasPirate/Assaulter/ManYouSuck.wav",
@@ -164,7 +164,7 @@ sound.Add {
 sound.Add {
 	name = "VaasPirateAssaulterCharge",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		// Technically from the Shotgunner, but who cares?
@@ -181,7 +181,7 @@ sound.Add {
 sound.Add {
 	name = "VaasPirateAssaulterGetHim",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"VaasPirate/Assaulter/ComeOnLetsGetHim.wav",

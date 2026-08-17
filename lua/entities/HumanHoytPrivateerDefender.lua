@@ -15,7 +15,7 @@ list.Set( "NPC", "HumanHoytPrivateerDefender", {
 sound.Add {
 	name = "HoytPrivateerDefenderSpot",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"HoytPrivateer/Defender/ThoughYouCouldHide.wav",
@@ -31,7 +31,7 @@ sound.Add {
 sound.Add {
 	name = "HoytPrivateerDefenderAttackingTaunt",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"HoytPrivateer/Defender/ImGonnaMakeYouBleed.wav",
@@ -44,7 +44,7 @@ sound.Add {
 sound.Add {
 	name = "HoytPrivateerDefenderEfficiencyTaunt",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"HoytPrivateer/Defender/EyAveYouBeenDoingThisLong.wav",
@@ -60,7 +60,7 @@ sound.Add {
 sound.Add {
 	name = "HoytPrivateerDefenderAdvancing",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"HoytPrivateer/Defender/AdvancingCoverMe.wav",
@@ -73,7 +73,7 @@ sound.Add {
 sound.Add {
 	name = "HoytPrivateerDefenderStartle",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"HoytPrivateer/Defender/HolyCrap.wav",
@@ -85,7 +85,7 @@ sound.Add {
 sound.Add {
 	name = "HoytPrivateerDefenderPinned",
 	channel = CHAN_VOICE,
-	level = 150,
+	level = 140,
 	pitch = 100,
 	sound = {
 		"HoytPrivateer/Defender/HelpImPinned.wav",

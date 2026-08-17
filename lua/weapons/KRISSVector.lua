@@ -24,8 +24,11 @@ SWEP.Crosshair = "SubmachineGun"
 SWEP.sAimSound = "BaseWeapon_Aim_SubmachineGun"
 SWEP.sHoldType = "SMG"
 
+SWEP.WPN_SHOOT = WPN_SUBMACHINEGUN
+
 SWEP.flRecoil = .8
-SWEP.flAimShoot = 3
+
+SWEP.flIronsightCloseness = 1.5
 
 SWEP.ViewModel = "models/weapons/c_v45.mdl"
 SWEP.WorldModel = "models/weapons/FC3W/FC3v45w.mdl"

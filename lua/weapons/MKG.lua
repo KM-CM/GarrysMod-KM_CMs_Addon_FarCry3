@@ -27,7 +27,6 @@ SWEP.flZoomSpeedIn = 4
 SWEP.flZoomSpeedOut = 1
 SWEP.vViewModelAim = Vector( 0, -5.95, 2.35 )
 SWEP.Crosshair = "Rifle"
-SWEP.flAimShoot = 4
 SWEP.sAimSound = "BaseWeapon_Aim_Rifle"
 SWEP.flRecoil = 2
 SWEP.sHoldType = "AR2"

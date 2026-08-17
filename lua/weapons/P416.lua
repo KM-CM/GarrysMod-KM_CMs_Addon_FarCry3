@@ -6,8 +6,10 @@ DEFINE_BASECLASS "BaseBulletWeapon"
 SWEP.Category = "Assault Rifles"
 SWEP.PrintName = "#P416"
 SWEP.Purpose = "Patriot Ordnance Factory P416."
+
 SWEP.WPN_SPRINT = WPN_RIFLEUP
 SWEP.WPN_SHOOT = WPN_RIFLEUP
+SWEP.WPN_COVER = WPN_RIFLEUP
 
 SWEP.sAimSound = "BaseWeapon_Aim_Rifle"
 
@@ -32,9 +34,9 @@ SWEP.flRecoil = 1.5
 SWEP.Slot = 2
 SWEP.Crosshair = "Rifle"
 SWEP.sHoldType = "AR2"
-SWEP.flAimShoot = 4
-SWEP.flAimShootTurn = .04
 SWEP.flSwayStabilizer = .6
+
+SWEP.flIronsightCloseness = 2
 
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
 

@@ -34,7 +34,7 @@ end
 function ENT:OnTakeDamage( dDamage )
 	//	if dDamage:IsBulletDamage() then
 		if self.ELastHitGroup == HITGROUP_HEAD then
-			dDamage:ScaleDamage( math.Remap( dDamage:GetDamage(), 0, self:Health(), .1, .33 ) )
+			dDamage:ScaleDamage( math.Remap( dDamage:GetDamage(), 0, self:Health(), .1, 1 / 3 ) )
 		else
 			dDamage:ScaleDamage( math.Remap( dDamage:GetDamage(), 0, self:Health(), .01, .05 ) )
 		end

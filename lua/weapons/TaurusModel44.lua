@@ -29,7 +29,6 @@ SWEP.flRecoil = 5
 SWEP.sAimSound = "BaseWeapon_Aim_Pistol"
 SWEP.sHoldType = "Revolver"
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
-SWEP.flAimShoot = 1
 
 sound.Add {
 	name = "TaurusModel44Shot",
