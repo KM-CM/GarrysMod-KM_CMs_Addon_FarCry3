@@ -36,6 +36,8 @@ SWEP.vViewModelAimAngle = Vector( -1.29, -1.453, -.784 )
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
 SWEP.flSwayStabilizer = .7
 SWEP.flAimSway = .05
+SWEP.flViewModelX = -3.5
+SWEP.flIronsightCloseness = -1.7
 
 function SWEP:GetReloadActivity( bOneInTheChamber ) return bOneInTheChamber && ACT_VM_RELOAD || ACT_VM_RELOAD_EMPTY end
 
