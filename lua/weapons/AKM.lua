@@ -49,6 +49,7 @@ sound.Add {
 	sound = "^AK47Shot.wav"
 }
 SWEP.sSound = "AKMShot"
+
 //	sound.Add {
 //		name = "AKMShotAuto",
 //		channel = CHAN_AUTO,
@@ -90,6 +91,12 @@ sound.Add {
 }
 
 list.Add( "NPCUsableWeapons", { class = "AKM", title = "#AKM", category = SWEP.Category } )
+
+function SWEP:GetMuzzleFlashPosition()
+	local pOwner = self:GetOwner()
+	if pOwner == LocalPlayer() && !pOwner:ShouldDrawLocalPlayer() then return end
+	return self:GetPos() + self:GetAngles():Forward() * 44
+end
 
 function SWEP:DrawWorldModel()
 	self:DrewWorldModelAndUsedRenderOverrides()
