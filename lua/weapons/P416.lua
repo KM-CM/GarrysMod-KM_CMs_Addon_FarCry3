@@ -34,9 +34,6 @@ SWEP.flRecoil = 1.5
 SWEP.Slot = 2
 SWEP.Crosshair = "Rifle"
 SWEP.sHoldType = "AR2"
-SWEP.flSwayStabilizer = .6
-
-SWEP.flIronsightCloseness = 2
 
 SWEP.__VIEWMODEL_FULLY_MODELED__ = true
 
@@ -76,8 +73,10 @@ sound.Add {
 	sound = "P416/Bolt.wav"
 }
 
-SWEP.vViewModelAim = Vector( -8.009, -3.961, .239 )
+SWEP.vViewModelAim = Vector( -8.009, -3.9564, .23 )
 SWEP.vViewModelAimAngle = Vector( .216, -1.073, -.357 )
+SWEP.flSwayStabilizer = .6
+SWEP.flIronsightCloseness = 2.5
 
 function SWEP:DrawWorldModel()
 	self:DrewWorldModelAndUsedRenderOverrides()
