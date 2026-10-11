@@ -196,10 +196,13 @@ if !SERVER then return end
 ENT.Moving_WEAPON_STANCE = WEAPON_STANCE_HIP
 
 if !CLASS_VAAS_PIRATES then Add_NPC_Class "CLASS_VAAS_PIRATES" end
-ENT.iDefaultClass = CLASS_VAAS_PIRATES
+ENT.m_iDefaultClass = CLASS_VAAS_PIRATES
 
 function ENT:DLG_Suppressed() self:EmitSound "VaasPirateAssaulterSuppressed" end
-function ENT:DLG_Pinned() self:EmitSound "VaasPirateAssaulterPinned" end
+function ENT:DLG_Pinned()
+	self:EmitSound "VaasPirateAssaulterPinned"
+	return BaseClass.DLG_Pinned( self, MyTable )
+end
 function ENT:DLG_Advancing() self:EmitSound "VaasPirateAssaulterAdvancing" end
 function ENT:DLG_FiringAtAnExposedTarget() self:EmitSound "VaasPirateAssaulterAttackingTaunt" end
 function ENT:DLG_Suppressing() self:EmitSound "VaasPirateAssaulterAttackingTaunt" end

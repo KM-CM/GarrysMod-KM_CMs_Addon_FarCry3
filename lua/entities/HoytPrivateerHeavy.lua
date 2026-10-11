@@ -13,7 +13,7 @@ list.Set( "NPC", "HoytPrivateerHeavyGunner", {
 if CLIENT then return end
 
 if !CLASS_HOYT_PRIVATEERS then Add_NPC_Class "CLASS_HOYT_PRIVATEERS" end
-ENT.iDefaultClass = CLASS_HOYT_PRIVATEERS
+ENT.m_iDefaultClass = CLASS_HOYT_PRIVATEERS
 
 ENT.GAME_flHeadshotDamageMultiplier = 2
 

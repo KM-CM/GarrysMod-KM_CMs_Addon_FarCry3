@@ -96,14 +96,17 @@ sound.Add {
 if !SERVER then return end
 
 if !CLASS_HOYT_PRIVATEERS then Add_NPC_Class "CLASS_HOYT_PRIVATEERS" end
-ENT.iDefaultClass = CLASS_HOYT_PRIVATEERS
+ENT.m_iDefaultClass = CLASS_HOYT_PRIVATEERS
 
 function ENT:DLG_Spot() self:EmitSound "HoytPrivateerDefenderSpot" end
 function ENT:DLG_Advancing() self:EmitSound "HoytPrivateerDefenderAdvancing" end
 function ENT:DLG_FiringAtAnExposedTarget() self:EmitSound "HoytPrivateerDefenderAttackingTaunt" end
 function ENT:DLG_Suppressing() self:EmitSound "HoytPrivateerDefenderAttackingTaunt" end
 function ENT:DLG_Startle() self:EmitSound "HoytPrivateerDefenderStartle" end
-function ENT:DLG_Pinned() self:EmitSound "HoytPrivateerDefenderPinned" end
+function ENT:DLG_Pinned()
+	self:EmitSound "HoytPrivateerDefenderPinned"
+	return BaseClass.DLG_Pinned( self, MyTable )
+end
 
 function ENT:Initialize()
 	self:SetModel "models/player/privateer_1.mdl"
