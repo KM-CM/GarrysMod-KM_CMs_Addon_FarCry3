@@ -92,23 +92,21 @@ sound.Add {
 
 list.Add( "NPCUsableWeapons", { class = "AKM", title = "#AKM", category = SWEP.Category } )
 
-function SWEP:GetMuzzleFlashPosition()
-	local pOwner = self:GetOwner()
-	if pOwner == LocalPlayer() && !pOwner:ShouldDrawLocalPlayer() then return end
-	return self:GetPos() + self:GetAngles():Forward() * 44
-end
-
 function SWEP:DrawWorldModel()
 	self:DrewWorldModelAndUsedRenderOverrides()
 	local pOwner = self:GetOwner()
 	if !IsValid( pOwner ) then self:SetRenderOrigin( nil ) self:SetRenderAngles( nil ) self:DrawModel() return end
 	local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" ) if !tHand then return end
 	local ang = tHand.Ang
-	local vOffset = ang:Right() * 2 + ang:Forward() * -13 + ang:Up() * 5
-	ang:RotateAroundAxis( ang:Right(), 0 )
-	ang:RotateAroundAxis( ang:Forward(), 10 )
-	ang:RotateAroundAxis( ang:Up(), 0 )
+	local vOffset = ang:Right() * 1.5 + ang:Forward() * -13 + ang:Up() * 1
+	ang:RotateAroundAxis( ang:Right(), 10 )
 	self:SetRenderOrigin( tHand.Pos + vOffset )
 	self:SetRenderAngles( ang )
 	self:DrawModel()
+end
+
+function SWEP:GetMuzzleFlashPosition()
+	local pOwner = self:GetOwner()
+	if pOwner == LocalPlayer() && !pOwner:ShouldDrawLocalPlayer() then return end
+	return self:GetPos() + self:GetAngles():Forward() * 41 - self:GetAngles():Up()
 end

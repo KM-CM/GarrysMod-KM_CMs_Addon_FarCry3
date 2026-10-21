@@ -18,14 +18,3 @@ function SWEP:Deploy()
 	end
 	return BaseClass.Deploy( self )
 end
-
-function SWEP:Holster( pTo )
-	if !BaseClass.Holster( self ) then return end
-	local pOwner = self:GetOwner()
-	local pViewModel = pOwner.GetViewModel
-	if pViewModel then
-		pViewModel = pViewModel( pOwner )
-		if IsValid( pViewModel ) then pViewModel:SetColor( color_white ) pViewModel:SetBodygroup( 1, 0 ) end
-	end
-	return true
-end

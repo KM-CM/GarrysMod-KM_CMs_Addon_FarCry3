@@ -84,11 +84,16 @@ function SWEP:DrawWorldModel()
 	if !IsValid( pOwner ) then self:SetRenderOrigin( nil ) self:SetRenderAngles( nil ) self:DrawModel() return end
 	local tHand = pOwner:GetAttachment( pOwner:LookupAttachment "anim_attachment_rh" ) if !tHand then return end
 	local ang = tHand.Ang
-	local vOffset = ang:Right() * 1 + ang:Forward() * 0 + ang:Up() * 0
-	ang:RotateAroundAxis( ang:Right(), 90 )
+	local vOffset = ang:Right() * 1 + ang:Up() * -1
+	ang:RotateAroundAxis( ang:Right(), 100 )
 	ang:RotateAroundAxis( ang:Forward(), 180 )
-	ang:RotateAroundAxis( ang:Up(), 0 )
 	self:SetRenderOrigin( tHand.Pos + vOffset )
 	self:SetRenderAngles( ang )
 	self:DrawModel()
+end
+
+function SWEP:GetMuzzleFlashPosition()
+	local pOwner = self:GetOwner()
+	if pOwner == LocalPlayer() && !pOwner:ShouldDrawLocalPlayer() then return end
+	return self:GetPos() + self:GetAngles():Up() * 25 + self:GetAngles():Forward() * 4
 end
