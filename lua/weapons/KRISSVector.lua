@@ -3,21 +3,15 @@ DEFINE_BASECLASS "BaseBulletWeapon"
 SWEP.Category = "Submachine Guns"
 SWEP.PrintName = "#KRISSVector"
 SWEP.Purpose = "KRISS Vector."
-SWEP.Primary.ClipSize = 40
-SWEP.Primary.DefaultClip = 40
+SWEP.Primary.ClipSize = 30
+SWEP.Primary.DefaultClip = 30
 SWEP.Primary.Automatic = true
 SWEP.Primary.Ammo = "SMG1"
 SWEP.Primary_flSpreadX = .0092
 SWEP.Primary_flSpreadY = .0092
-SWEP.Primary_flDelay = .05
+SWEP.Primary_flDelay = 60 / 1200
 SWEP.Primary_flDamage = 30
-SWEP.Secondary.ClipSize = -1
-SWEP.Secondary.DefaultClip = -1
-SWEP.Secondary.Automatic = false
-SWEP.Secondary.Ammo = ""
 SWEP.Spawnable = true
-SWEP.AdminOnly = false
-SWEP.Weight = 1
 SWEP.Slot = 2
 SWEP.DrawAmmo = true
 SWEP.Crosshair = "SubmachineGun"
@@ -88,6 +82,12 @@ function SWEP:DrawWorldModel()
     self:SetRenderOrigin( tHand.Pos + vOffset )
     self:SetRenderAngles( ang )
     self:DrawModel()
+end
+
+function SWEP:GetMuzzleFlashPosition()
+	local pOwner = self:GetOwner()
+	if pOwner == LocalPlayer() && !pOwner:ShouldDrawLocalPlayer() then return end
+	return self:GetPos() + self:GetAngles():Forward() * 27.5
 end
 
 SWEP.m_bNoNormalShootAnimation = true
